@@ -21,7 +21,7 @@ class TinyCompressImages extends \System
 	 */
 	public function processPostUpload($arrFiles)
 	{
-		if (is_array($arrFiles) && strlen($GLOBALS['TL_CONFIG']['tinypng_api_key'])) {
+		if (is_array($arrFiles) && $GLOBALS['TL_CONFIG']['tinypng_api_key'] = '') {
 			foreach($arrFiles as $file) {
 				
 				$input = TL_ROOT . '/' . $file;
