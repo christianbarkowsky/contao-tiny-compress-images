@@ -27,7 +27,7 @@ class TinyCompressImages extends \System
 				$input = TL_ROOT . '/' . $file;
 				$output = TL_ROOT . '/' . $file;
 				
-				if (extension_loaded('curl') {	
+				if (extension_loaded('curl')) {	
 					$request = curl_init();
 					
 					curl_setopt_array($request, array(
