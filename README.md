@@ -8,7 +8,9 @@ This plugin automatically optimizes your images by integrating with the popular 
 ## Getting started
 
 Install this plugin and obtain your free API key from https://tinypng.com/developers. The first 500 compressions per month are completely free.  
+Put the API key to your Contao settings.
   
-
-License: http://www.gnu.org/licenses/lgpl-3.0.html LGPL <br>
+  
+## Contributors
 Author: [christianbarkowsky](http://www.christianbarkowsky.de)
+Idea: Marco Zinsmeister (http://www.profimedien.net)
