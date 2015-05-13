@@ -1,7 +1,7 @@
 {
     "name":"christianbarkowsky/contao-tiny-compress-images",
     "description":"This plugin automatically optimizes your images by integrating with the popular image compression services TinyJPG and TinyPNG.",
-    "keywords":["contao", "images", "compress", "compress"],
+    "keywords":["contao", "images", "compress", "compress", "upload"],
     "type":"contao-module",
     "license":"LGPL-3.0+",
     "authors":[
