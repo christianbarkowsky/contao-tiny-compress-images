@@ -12,5 +12,5 @@ Put the API key to your Contao settings.
   
   
 ## Contributors
-Author: [christianbarkowsky](http://www.christianbarkowsky.de)  
-Idea: Marco Zinsmeister (http://www.profimedien.net)
+Author: [Christian Barkowsky](http://www.christianbarkowsky.de)  
+Idea: [Marco Zinsmeister](http://www.profimedien.net)
