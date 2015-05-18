@@ -30,7 +30,7 @@ class TinyCompressImages extends \System
 				
 				$strFile = TL_ROOT . '/' . $file;
 				
-				$objRequest = new Request();
+				$objRequest = new Contao\Request();
 				$objRequest->method = 'post';
 				$objRequest->data = file_get_contents($strFile);
 				$objRequest->setHeader('Content-type', 'image/png');
