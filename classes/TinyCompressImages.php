@@ -41,6 +41,7 @@ class TinyCompressImages extends \System
 				
 				if ($objRequest->code == 201) {
 					file_put_contents($strFile, fopen($arrResponse->output->url, "rb", false));
+					\Dbafs::addResource($file);
 					\Contao\System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_GENERAL);
 				} else {
 					\Contao\System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_GENERAL);
