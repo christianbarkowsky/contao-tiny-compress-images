@@ -17,6 +17,8 @@ class TinyCompressImages extends \System
 {
 	/**
 	 * Compress images
+     *
+     * @param boolean $arrFiles File array
 	 */
 	public function processPostUpload($arrFiles)
 	{
@@ -49,10 +51,10 @@ class TinyCompressImages extends \System
 						$objFile->path   = $file;
 						$objFile->hash   = md5_file(TL_ROOT . '/' . $file);
 						$objFile->save();
-						
-						\Contao\System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_FILES);
+
+                        \System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_FILES);
 					} else {
-						\Contao\System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_FILES);
+						\System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_FILES);
 					}
 				}
 			}
