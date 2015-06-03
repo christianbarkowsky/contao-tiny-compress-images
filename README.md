@@ -1,5 +1,5 @@
 # Contao - tiny-compress-images  
-[![Build Status](https://travis-ci.org/christianbarkowsky/contao-tiny-compress-images.svg)](https://travis-ci.org/christianbarkowsky/contao-tiny-compress-images)
+[![Build Status](https://travis-ci.org/christianbarkowsky/contao-tiny-compress-images.svg)](https://travis-ci.org/christianbarkowsky/contao-tiny-compress-images) [![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)](https://github.com/christianbarkowsky/contao-tiny-compress-images)
 
 **Speed up your website. Optimize your JPEG and PNG images automatically with TinyPNG.**
 
