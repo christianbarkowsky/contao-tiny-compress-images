@@ -13,7 +13,10 @@
 namespace Barkowsky;
 
 
-class TinyCompressImages extends \System
+use Contao\System;
+use Contao\FilesModel;
+
+class TinyCompressImages extends System
 {
 	/**
 	 * Compress images
@@ -29,7 +32,7 @@ class TinyCompressImages extends \System
 			$strAuthorization = 'Basic '.base64_encode("api:$strKey");
 			
 			foreach($arrFiles as $file) {	
-				$objFile = \FilesModel::findByPath($file);
+				$objFile = FilesModel::findByPath($file);
 				
 				if (in_array($objFile->extension, array('png', 'jpg', 'jpeg'))) {
 					
@@ -52,9 +55,9 @@ class TinyCompressImages extends \System
 						$objFile->hash   = md5_file(TL_ROOT . '/' . $file);
 						$objFile->save();
 
-                        \System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_FILES);
+                        System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_FILES);
 					} else {
-						\System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_FILES);
+						System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_FILES);
 					}
 				}
 			}

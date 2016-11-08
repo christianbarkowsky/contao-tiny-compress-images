@@ -19,13 +19,19 @@
     },
     "require":{
             "php":">=5.3",
-            "contao/core":">=3.0,<4"
+            "contao/core-bundle": "~3.5 || ~4.0",
+            "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
     "extra": {
         "contao": {
             "sources": {
-                "src": "system/modules/tiny-compress-images"
+                "contao": "system/modules/tiny-compress-images"
             }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Barkowsky\\": "src/"
         }
     }
 }
