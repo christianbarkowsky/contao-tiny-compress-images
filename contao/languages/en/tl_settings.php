@@ -1,8 +1,8 @@
 <?php
-	
+
 /**
- * Copyright (C) 2015 Christian Barkowsky
- * 
+ * Copyright (C) 2015-2016 Christian Barkowsky
+ *
  * @author  Christian Barkowsky <hallo@christianbarkowsky.de>
  * @copyright Christian Barkowsky <http://christianbarkowsky.de>
  * @package tiny-compress-images
