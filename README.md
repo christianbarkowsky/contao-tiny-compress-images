@@ -1,6 +1,6 @@
 # Contao - tiny-compress-images  
 
-[![Version](http://img.shields.io/packagist/v/christianbarkowsky/contao-tiny-compress-images.svg?style=flat-square)](http://packagist.com/packages/christianbarkowsky/contao-tiny-compress-images)  [![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/christianbarkowsky/contao-tiny-compress-images/master/LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/christianbarkowsky/contao-tiny-compress-images/v/stable)](https://packagist.org/packages/christianbarkowsky/contao-tiny-compress-images) [![Total Downloads](https://poser.pugx.org/christianbarkowsky/contao-tiny-compress-images/downloads)](https://packagist.org/packages/christianbarkowsky/contao-tiny-compress-images) [![License](https://poser.pugx.org/christianbarkowsky/contao-tiny-compress-images/license)](https://packagist.org/packages/christianbarkowsky/contao-tiny-compress-images)
 
 **Speed up your website. Optimize your JPEG and PNG images automatically with TinyPNG.**
 
