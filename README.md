@@ -11,8 +11,8 @@ This plugin automatically optimizes your images by integrating with the popular 
 
 Install this plugin and obtain your free API key from https://tinypng.com/developers. The first 500 compressions per month are completely free.  
 Put the API key to your Contao settings.
-  
-  
+
+
 ## Contributors
 Author: [Christian Barkowsky](http://www.christianbarkowsky.de)  
 Idea: [Marco Zinsmeister](http://www.profimedien.net)
