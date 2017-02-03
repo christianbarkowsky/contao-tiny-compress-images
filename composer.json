@@ -19,7 +19,7 @@
     },
     "require":{
             "php":">=5.5",
-            "contao/core-bundle": "~3.5 || ^4.2",
+            "contao/core-bundle": "~3.5 || ^4.3",
             "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
     "extra": {
