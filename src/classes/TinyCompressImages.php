@@ -1,22 +1,19 @@
 <?php
 
 /**
- * Copyright (C) 2015-2016 Christian Barkowsky
+ * Copyright (C) 2015-2019 Christian Barkowsky
  *
- * @author  Christian Barkowsky <hallo@christianbarkowsky.de>
- * @copyright Christian Barkowsky <http://christianbarkowsky.de>
+ * @author  Christian Barkowsky <hallo@brkwsky.de>
+ * @copyright Christian Barkowsky <https://brkwsky.de>
  * @package tiny-compress-images
  * @license LGPL
  */
 
-
 namespace Barkowsky;
 
-
 use Contao\System;
-use Contao\FilesModel;
 use Contao\Request;
-
+use Contao\FilesModel;
 
 /**
  * Class TinyCompressImages
@@ -32,17 +29,15 @@ class TinyCompressImages extends System
     public function processPostUpload($arrFiles)
     {
         if (is_array($arrFiles) && $GLOBALS['TL_CONFIG']['tinypng_api_key'] != '') {
-
             $strUrl = 'https://api.tinypng.com/shrink';
             $strKey = $GLOBALS['TL_CONFIG']['tinypng_api_key'];
             $strAuthorization = 'Basic '.base64_encode("api:$strKey");
 
-            foreach($arrFiles as $file) {
+            foreach ($arrFiles as $file) {
                 $objFile = FilesModel::findByPath($file);
 
                 if (in_array($objFile->extension, array('png', 'jpg', 'jpeg'))) {
-
-                    $strFile = TL_ROOT . '/' . $file;
+                    $strFile = TL_ROOT . '/' . $objFile->path;
 
                     $objRequest = new Request();
                     $objRequest->method = 'post';
@@ -58,12 +53,16 @@ class TinyCompressImages extends System
 
                         $objFile->tstamp = time();
                         $objFile->path   = $file;
-                        $objFile->hash   = md5_file(TL_ROOT . '/' . $file);
+                        $objFile->hash   = md5_file(TL_ROOT . '/' . $objFile->path);
                         $objFile->save();
 
-                        System::log('Compression was successful. (File: ' . $file . ')', __METHOD__, TL_FILES);
+                        System::log('Compression was successful. (File: ' . $objFile->path . ')', __METHOD__, TL_FILES);
                     } else {
-                        System::log('Compression failed. (' . $arrResponse->message . ') (File: ' . $file . ')', __METHOD__, TL_FILES);
+                        System::log(
+                            'Compression failed. (' . $arrResponse->message . ') (File: ' . $objFile->path . ')',
+                            METHOD__,
+                            TL_FILES
+                        );
                     }
                 }
             }
