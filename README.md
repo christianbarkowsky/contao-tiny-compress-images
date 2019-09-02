@@ -7,12 +7,22 @@
 This plugin automatically optimizes your images by integrating with the popular image compression services TinyJPG and TinyPNG.  
 
 
+## Install using Contao Manager
+
+Search for **tinyjpg** or **tinypng** and you will find this extension.
+
+## Install using Composer
+
+    $ composer require christianbarkowsky/contao-tiny-compress-images
+
+
 ## Getting started
 
-Install this plugin and obtain your free API key from https://tinypng.com/developers. The first 500 compressions per month are completely free.  
+Install this plugin and obtain your free API key from https://tinypng.com/developers.  
+The first 500 compressions per month are completely free.  
 Put the API key to your Contao settings.
 
 
-## Contributors
-Author: [Christian Barkowsky](http://www.christianbarkowsky.de)  
-Idea: [Marco Zinsmeister](http://www.profimedien.net)
+## Thank you
+ 
+* Marco Zinsmeister ([profimedien.net](http://www.profimedien.net))
