@@ -18,7 +18,7 @@ Search for **tinyjpg** or **tinypng** and you will find this extension.
 
 ## Getting started
 
-Install this plugin and obtain your free API key from https://tinypng.com/developers.  
+Install this extension and obtain your free API key from [https://tinypng.com/developers](https://tinypng.com/developers).  
 The first 500 compressions per month are completely free.  
 Put the API key to your Contao settings.
 
