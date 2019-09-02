@@ -12,13 +12,14 @@
         }
     ],
     "support":{
-            "issues":"https://github.com/christianbarkowsky/contao-tiny-compress-images/issues",
-            "source":"https://github.com/christianbarkowsky/contao-tiny-compress-images"
+        "issues": "https://github.com/christianbarkowsky/contao-tiny-compress-images/issues",
+        "source": "https://github.com/christianbarkowsky/contao-tiny-compress-images",
+        "docs": "https://brkwsky.de/contao-tinypng-tinyjpg-erweiterung"
     },
     "require":{
-            "php":">=5.5",
-            "contao/core-bundle": "~3.5 || ~4.4",
-            "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+        "php":">=5.5",
+        "contao/core-bundle": "~3.5 || ~4.4",
+        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
     "extra": {
         "contao": {
