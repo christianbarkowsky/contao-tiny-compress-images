@@ -12,6 +12,12 @@
             "role":"Developer"
         }
     ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/christianbarkowsky"
+        }
+    ],
     "support":{
         "issues": "https://github.com/christianbarkowsky/contao-tiny-compress-images/issues",
         "source": "https://github.com/christianbarkowsky/contao-tiny-compress-images",
