@@ -1,15 +1,14 @@
 {
     "name":"christianbarkowsky/contao-tiny-compress-images",
     "description":"This plugin automatically optimizes your images by integrating with the popular image compression services TinyJPG and TinyPNG.",
-    "keywords":["contao", "tinypng", "tinyjpg", "images", "compress", "upload", "tiny"],
+    "keywords":["contao", "tinypng", "tinyjpg", "images", "compress", "upload", "tiny", "tinywebp"],
     "type":"contao-module",
-    "homepage": "https://brkwsky.de/contao-tinypng-tinyjpg-erweiterung",
+    "homepage": "https://plenta.io/contao-tinypng-tinyjpg-erweiterung",
     "license":"LGPL-3.0-or-later",
     "authors":[
         {
             "name":"Christian Barkowsky",
-            "homepage":"https://brkwsky.de",
-            "role":"Developer"
+            "homepage":"https://plenta.io"
         }
     ],
     "funding": [
@@ -24,9 +23,8 @@
         "docs": "https://brkwsky.de/contao-tinypng-tinyjpg-erweiterung"
     },
     "require":{
-        "php":">=5.5",
-        "contao/core-bundle": "~3.5 || ~4.4",
-        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.9"
     },
     "extra": {
         "contao": {

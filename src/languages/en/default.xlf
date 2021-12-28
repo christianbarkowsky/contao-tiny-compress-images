@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="MSC.TINYCOMPRESSIMAGES.successful">
+                <source>File %s compression was successful.</source>
+            </trans-unit>
+            <trans-unit id="MSC.TINYCOMPRESSIMAGES.failed">
+                <source>File %s compression failed (%s).</source>
+            </trans-unit>
+            <trans-unit id="MSC.TINYCOMPRESSIMAGES.count">
+                <source>You made %s compressions this month (tinyfy.com).</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+
+
