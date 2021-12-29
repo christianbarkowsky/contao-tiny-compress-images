@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="tl_settings.tinypng_api_key.0">
+                <source>API Key</source>
+                <target>API Schlüssel</target>
+            </trans-unit>
+            <trans-unit id="tl_settings.tinypng_api_key.1">
+                <source>Please enter your tinypng.com API key.</source>
+                <target>Bitte geben Sie Ihren tinypng.com API Schlüssel ein.</target>
+            </trans-unit>
+            <trans-unit id="tl_settings.tiny_compress_images_legend">
+                <source>Tiny compress (tinypng.com)</source>
+                <target>Tiny compress (tinypng.com)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

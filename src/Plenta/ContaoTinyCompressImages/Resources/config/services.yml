@@ -1,0 +1,4 @@
+services:
+    plenta.contao_tiny_compress_images.listener.data_container:
+        class: Plenta\ContaoTinyCompressImages\EventListener\DataContainerListener
+        public: true

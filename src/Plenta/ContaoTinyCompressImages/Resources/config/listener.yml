@@ -1,0 +1,5 @@
+services:
+    Plenta\ContaoTinyCompressImages\EventListener\PostUploadListener:
+        public: true
+        arguments:
+            - '@logger'

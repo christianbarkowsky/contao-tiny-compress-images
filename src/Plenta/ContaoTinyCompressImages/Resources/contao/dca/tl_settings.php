@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @copyright   Copyright (c) 2015-2021, Plenta.io & Christian Barkowsky
  * @author      Christian Barkowsky <hallo@plenta.io>

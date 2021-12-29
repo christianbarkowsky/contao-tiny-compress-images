@@ -9,22 +9,27 @@ declare(strict_types=1);
  * @license     LGPL
  */
 
-namespace Barkowsky;
+namespace Plenta\ContaoTinyCompressImages\EventListener;
 
-use Contao\Image;
-use Contao\System;
 use Contao\Message;
 use Contao\Request;
 use Contao\FilesModel;
-use Contao\StringUtil;
-use Contao\Controller;
+use Psr\Log\LoggerInterface;
 use Contao\CoreBundle\Monolog\ContaoContext;
+use Contao\CoreBundle\ServiceAnnotation\Hook;
 
 /**
- * Hook "postUpload".
+ * @Hook("postUpload")
  */
-class TinyCompressImages extends System
+class PostUploadListener
 {
+    private LoggerInterface $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
     /**
      * @var array|string[]
      */
@@ -32,18 +37,12 @@ class TinyCompressImages extends System
         'png', 'jpg', 'jpeg', 'webp'
     ];
 
-    /**
-     * Compress images.
-     * @param array $files
-     * @return void
-     */
-    public function processPostUpload(array $files): void
+    public function __invoke(array $files): void
     {
         if (count($files) > 0 && !empty($GLOBALS['TL_CONFIG']['tinypng_api_key'])) {
             $strUrl = 'https://api.tinypng.com/shrink';
             $strKey = $GLOBALS['TL_CONFIG']['tinypng_api_key'];
             $strAuthorization = 'Basic '.base64_encode("api:$strKey");
-            $logger = System::getContainer()->get('monolog.logger.contao');
             $compressionCount = null;
 
             foreach ($files as $file) {
@@ -75,7 +74,7 @@ class TinyCompressImages extends System
                             sprintf($GLOBALS['TL_LANG']['MSC']['TINYCOMPRESSIMAGES']['successful'], $objFile->path)
                         );
 
-                        $logger->addInfo(
+                        $this->logger->info(
                             sprintf($GLOBALS['TL_LANG']['MSC']['TINYCOMPRESSIMAGES']['successful'], $objFile->path),
                             ['contao' => new ContaoContext(__METHOD__, ContaoContext::FILES)]
                         );
@@ -88,7 +87,7 @@ class TinyCompressImages extends System
                             )
                         );
 
-                        $logger->addError(
+                        $this->logger->error(
                             sprintf(
                                 $GLOBALS['TL_LANG']['MSC']['TINYCOMPRESSIMAGES']['failed'],
                                 $objFile->path,
@@ -105,26 +104,11 @@ class TinyCompressImages extends System
                     sprintf($GLOBALS['TL_LANG']['MSC']['TINYCOMPRESSIMAGES']['count'], $compressionCount)
                 );
 
-                $logger->addNotice(
+                $this->logger->info(
                     sprintf($GLOBALS['TL_LANG']['MSC']['TINYCOMPRESSIMAGES']['count'], $compressionCount),
                     ['contao' => new ContaoContext(__METHOD__, ContaoContext::GENERAL)]
                 );
             }
         }
-    }
-
-    public function addIcon(array $row, ?string $href, string $label, string $title, ?string $icon, string $attributes)
-    {
-        if ('folder' === (string) $row['type']) {
-            return '';
-        }
-
-        $model = FilesModel::findByPath(rawurldecode($row['id']));
-
-        if (null !== $model && true === (bool) $model->compressed) {
-            return Image::getHtml($icon, $label);
-        }
-
-        return '';
     }
 }

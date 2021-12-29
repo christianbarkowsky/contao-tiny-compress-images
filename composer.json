@@ -2,7 +2,7 @@
     "name":"christianbarkowsky/contao-tiny-compress-images",
     "description":"This plugin automatically optimizes your images by integrating with the popular image compression services TinyJPG and TinyPNG.",
     "keywords":["contao", "tinypng", "tinyjpg", "images", "compress", "upload", "tiny", "tinywebp"],
-    "type":"contao-module",
+    "type":"contao-bundle",
     "homepage": "https://plenta.io/contao-tinypng-tinyjpg-erweiterung",
     "license":"LGPL-3.0-or-later",
     "authors":[
@@ -27,10 +27,11 @@
         "contao/core-bundle": "^4.9"
     },
     "extra": {
-        "contao": {
-            "sources": {
-                "src": "system/modules/tiny-compress-images"
-            }
+        "contao-manager-plugin": "Plenta\\ContaoTinyCompressImages\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plenta\\ContaoTinyCompressImages\\": "src/Plenta/ContaoTinyCompressImages"
         }
     }
 }
