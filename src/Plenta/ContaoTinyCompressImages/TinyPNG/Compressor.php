@@ -168,4 +168,9 @@ class Compressor
             ['contao' => new ContaoContext(__METHOD__, ContaoContext::GENERAL)]
         );
     }
+
+    public function getExtensions(): array
+    {
+        return $this->extensions;
+    }
 }
