@@ -24,6 +24,10 @@ use Webmozart\PathUtil\Path;
 
 class Compressor
 {
+    public const EXTENSIONS = [
+        'png', 'jpg', 'jpeg', 'webp'
+    ];
+
     private ContaoFramework $framework;
     private TranslatorInterface $translator;
     private LoggerInterface $logger;
@@ -32,9 +36,6 @@ class Compressor
 
     private string $apiKey;
     private string $auth;
-    private array $extensions = [
-        'png', 'jpg', 'jpeg', 'webp'
-    ];
 
     public function __construct(
         ContaoFramework $framework,
@@ -76,7 +77,7 @@ class Compressor
             return null;
         }
 
-        if (!\in_array($file->extension, $this->extensions, true)) {
+        if (!\in_array($file->extension, self::EXTENSIONS, true)) {
             $this->showError($filename, sprintf('File extension %s is not allowed', $file->extension));
 
             return null;
@@ -167,10 +168,5 @@ class Compressor
             $this->translator->trans('MSC.TINYCOMPRESSIMAGES.count', [$compressionCount], 'contao_default'),
             ['contao' => new ContaoContext(__METHOD__, ContaoContext::GENERAL)]
         );
-    }
-
-    public function getExtensions(): array
-    {
-        return $this->extensions;
     }
 }
