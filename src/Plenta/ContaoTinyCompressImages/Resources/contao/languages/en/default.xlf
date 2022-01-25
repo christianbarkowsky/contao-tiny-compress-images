@@ -9,7 +9,7 @@
                 <source>File %s compression failed (%s).</source>
             </trans-unit>
             <trans-unit id="MSC.TINYCOMPRESSIMAGES.count">
-                <source>You made %s compressions this month (tinyfy.com).</source>
+                <source>You made %s compressions this month (tinify.com).</source>
             </trans-unit>
         </body>
     </file>
