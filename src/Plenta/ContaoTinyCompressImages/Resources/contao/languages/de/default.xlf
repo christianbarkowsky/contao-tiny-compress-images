@@ -11,8 +11,8 @@
                 <target>Dateikomprimierung %s fehlgeschlagen (%s).</target>
             </trans-unit>
             <trans-unit id="MSC.TINYCOMPRESSIMAGES.count">
-                <source>You made %s compressions this month (tinyfy.com).</source>
-                <target>Du hast %s Bildkompressionen in diesem Monat durchgeführt (tinyfy.com).</target>
+                <source>You made %s compressions this month (tinify.com).</source>
+                <target>Du hast %s Bildkompressionen in diesem Monat durchgeführt (tinify.com).</target>
             </trans-unit>
         </body>
     </file>

@@ -23,8 +23,10 @@
         "docs": "https://brkwsky.de/contao-tinypng-tinyjpg-erweiterung"
     },
     "require":{
+        "ext-json": "*",
         "php": "^7.4 || ^8.0",
-        "contao/core-bundle": "^4.9"
+        "contao/core-bundle": "^4.9",
+        "symfony/http-client": "^4.4 || ^5.4"
     },
     "extra": {
         "contao-manager-plugin": "Plenta\\ContaoTinyCompressImages\\ContaoManager\\Plugin"
@@ -32,6 +34,13 @@
     "autoload": {
         "psr-4": {
             "Plenta\\ContaoTinyCompressImages\\": "src/Plenta/ContaoTinyCompressImages"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "composer/package-versions-deprecated": true,
+            "ocramius/package-versions": true
         }
     }
 }

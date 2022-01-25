@@ -10,8 +10,7 @@ declare(strict_types=1);
  */
 
 $GLOBALS['TL_DCA']['tl_files']['list']['operations']['tinify'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_files']['tinify'],
-    'icon' => 'bundles/plentacontaotinycompressimages/tinyfy.png',
+    'icon' => 'bundles/plentacontaotinycompressimages/tinify.png',
     'button_callback' => ['plenta.contao_tiny_compress_images.listener.data_container', 'onTinyCompressImagesButtonCallback']
 ];
 

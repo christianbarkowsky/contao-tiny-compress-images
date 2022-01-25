@@ -2,4 +2,13 @@ services:
     Plenta\ContaoTinyCompressImages\EventListener\PostUploadListener:
         public: true
         arguments:
-            - '@logger'
+            - '@plenta.contao_tiny_compress_images.compressor'
+
+    plenta.contao_tiny_compress_images.listener.data_container:
+        class: Plenta\ContaoTinyCompressImages\EventListener\DataContainerListener
+        public: true
+        arguments:
+            - '@plenta.contao_tiny_compress_images.compressor'
+            - '@contao.framework'
+            - '@router.default'
+            - '@translator'

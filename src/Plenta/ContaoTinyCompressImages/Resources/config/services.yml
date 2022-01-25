@@ -1,4 +1,10 @@
 services:
-    plenta.contao_tiny_compress_images.listener.data_container:
-        class: Plenta\ContaoTinyCompressImages\EventListener\DataContainerListener
+    plenta.contao_tiny_compress_images.compressor:
+        class: Plenta\ContaoTinyCompressImages\TinyPNG\Compressor
         public: true
+        arguments:
+            - '@contao.framework'
+            - '@translator'
+            - '@logger'
+            - '@http_client'
+            - '%kernel.project_dir%'
