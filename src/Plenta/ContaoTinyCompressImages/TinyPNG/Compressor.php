@@ -86,7 +86,7 @@ class Compressor
 
         try {
             $response = $this->httpClient->request('POST','https://api.tinypng.com/shrink', [
-                'body' => fopen($file->path, 'rb'),
+                'body' => fopen($filePath, 'rb'),
                 'headers' => [
                     'Authorization' => $this->auth
                 ]
