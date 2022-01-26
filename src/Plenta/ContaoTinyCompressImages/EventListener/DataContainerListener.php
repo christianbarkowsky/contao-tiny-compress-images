@@ -58,7 +58,7 @@ class DataContainerListener
         /** @var FilesModel $fileAdapter */
         $fileAdapter = $this->framework->getAdapter(FilesModel::class);
 
-        $file = $fileAdapter->findByPath($row['id']);
+        $file = $fileAdapter->findByPath(rawurldecode($row['id']));
 
         if (!$file instanceof FilesModel) {
             return '';
