@@ -55,6 +55,19 @@ class DataContainerListener
             return Image::getHtml($icon, $label, 'title="' . $label . '"');
         }
 
+        /** @var FilesModel $fileAdapter */
+        $fileAdapter = $this->framework->getAdapter(FilesModel::class);
+
+        $file = $fileAdapter->findByPath($row['id']);
+
+        if (!$file instanceof FilesModel) {
+            return '';
+        }
+
+        if (!\in_array($file->extension, Compressor::EXTENSIONS, true)) {
+            return '';
+        }
+
         return '<a href="' . Backend::addToUrl($href . '&amp;key=tinify&amp;id=' . $row['id']) . '" title="' . StringUtil::specialchars($title) . '"' . $attributes . '>' . Image::getHtml(preg_replace('/\.png$/i', '_.png', $icon), $this->translator->trans('tl_files.tinify', [], 'contao_default')) . '</a> ';
     }
 
