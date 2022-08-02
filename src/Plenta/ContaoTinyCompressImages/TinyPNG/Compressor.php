@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 /**
- * @copyright   Copyright (c) 2015-2021, Plenta.io & Christian Barkowsky
+ * @copyright   Copyright (c) 2015-2022, Plenta.io & Christian Barkowsky
+ * @author      Christian Barkowsky <https://github.com/plenta>
  * @author      David Greminger <https://github.com/bytehead>
  * @package     tiny-compress-images
  * @license     LGPL
@@ -53,10 +54,12 @@ class Compressor
         /** @var Config $config */
         $config = $framework->getAdapter(Config::class);
 
-        $this->apiKey = $config->get('tinypng_api_key');
+        $this->apiKey = (string) $config->get('tinypng_api_key');
 
         if ('' !== $this->apiKey) {
             $this->auth = 'Basic ' . base64_encode(sprintf('api:%s', $this->apiKey));
+        } else {
+            $this->showApiKeyWarning();
         }
     }
 
@@ -167,6 +170,20 @@ class Compressor
         $this->logger->info(
             $this->translator->trans('MSC.TINYCOMPRESSIMAGES.count', [$compressionCount], 'contao_default'),
             ['contao' => new ContaoContext(__METHOD__, ContaoContext::GENERAL)]
+        );
+    }
+
+    private function showApiKeyWarning(): void
+    {
+        $message = $this->framework->getAdapter(Message::class);
+
+        $message->addError(
+            $this->translator->trans('MSC.TINYCOMPRESSIMAGES.apikey', [], 'contao_default')
+        );
+
+        $this->logger->info(
+            $this->translator->trans('MSC.TINYCOMPRESSIMAGES.apikey', [], 'contao_default'),
+            ['contao' => new ContaoContext(__METHOD__, ContaoContext::ERROR)]
         );
     }
 }

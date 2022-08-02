@@ -11,6 +11,9 @@
             <trans-unit id="MSC.TINYCOMPRESSIMAGES.count">
                 <source>You made %s compressions this month (tinify.com).</source>
             </trans-unit>
+            <trans-unit id="MSC.TINYCOMPRESSIMAGES.apikey">
+                <source>Put the Tinify API key to your Contao settings. (Get your API key: https://tinify.com/developers)</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -14,6 +14,10 @@
                 <source>You made %s compressions this month (tinify.com).</source>
                 <target>Du hast %s Bildkompressionen in diesem Monat durchgeführt (tinify.com).</target>
             </trans-unit>
+            <trans-unit id="MSC.TINYCOMPRESSIMAGES.apikey">
+                <source>Put the Tinify API key to your Contao settings. (Get your API key: https://tinify.com/developers)</source>
+                <target>Füge den Tinify-API-Schlüssel zu deinen Contao-Einstellungen hinzu. (Get your API key: https://tinify.com/developers)</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
