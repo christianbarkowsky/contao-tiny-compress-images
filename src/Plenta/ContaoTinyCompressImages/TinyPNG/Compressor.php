@@ -180,10 +180,5 @@ class Compressor
         $message->addError(
             $this->translator->trans('MSC.TINYCOMPRESSIMAGES.apikey', [], 'contao_default')
         );
-
-        $this->logger->info(
-            $this->translator->trans('MSC.TINYCOMPRESSIMAGES.apikey', [], 'contao_default'),
-            ['contao' => new ContaoContext(__METHOD__, ContaoContext::ERROR)]
-        );
     }
 }
