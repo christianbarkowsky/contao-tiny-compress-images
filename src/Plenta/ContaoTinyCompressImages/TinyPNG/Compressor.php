@@ -21,7 +21,6 @@ use Psr\Log\LoggerInterface;
 use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Webmozart\PathUtil\Path;
 
 class Compressor
 {
@@ -86,7 +85,11 @@ class Compressor
             return null;
         }
 
-        $filePath = Path::join($this->projectDir, $file->path);
+        if (version_compare(VERSION, '4.13', '>=')) {
+            $filePath = \Symfony\Component\Filesystem\Path::join($this->projectDir, $file->path);
+        } else {
+            $filePath = Webmozart\PathUtil\Path::join($this->projectDir, $file->path);
+        }
 
         try {
             $response = $this->httpClient->request('POST','https://api.tinypng.com/shrink', [
