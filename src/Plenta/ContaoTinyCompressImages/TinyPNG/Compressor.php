@@ -88,7 +88,7 @@ class Compressor
         if (version_compare(VERSION, '4.13', '>=')) {
             $filePath = \Symfony\Component\Filesystem\Path::join($this->projectDir, $file->path);
         } else {
-            $filePath = Webmozart\PathUtil\Path::join($this->projectDir, $file->path);
+            $filePath = \Webmozart\PathUtil\Path::join($this->projectDir, $file->path);
         }
 
         try {
