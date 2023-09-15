@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * @copyright   Copyright (c) 2015-2022, Plenta.io & Christian Barkowsky
+ * @copyright   Copyright (c) 2015-2023, Plenta.io & Christian Barkowsky
  * @author      Christian Barkowsky <https://github.com/plenta>
  * @author      David Greminger <https://github.com/bytehead>
  * @package     tiny-compress-images
@@ -13,14 +13,15 @@ declare(strict_types=1);
 namespace Plenta\ContaoTinyCompressImages\TinyPNG;
 
 use Contao\Config;
-use Contao\CoreBundle\Framework\ContaoFramework;
-use Contao\CoreBundle\Monolog\ContaoContext;
-use Contao\FilesModel;
 use Contao\Message;
+use Contao\FilesModel;
 use Psr\Log\LoggerInterface;
-use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
+use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\CoreBundle\Monolog\ContaoContext;
+use Contao\CoreBundle\Framework\ContaoFramework;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
 
 class Compressor
 {
@@ -85,7 +86,8 @@ class Compressor
             return null;
         }
 
-        if (version_compare(VERSION, '4.13', '>=')) {
+        //if (version_compare(VERSION, '4.13', '>=')) {
+        if (version_compare(ContaoCoreBundle::getVersion(), '4.13', '>=')) {
             $filePath = \Symfony\Component\Filesystem\Path::join($this->projectDir, $file->path);
         } else {
             $filePath = \Webmozart\PathUtil\Path::join($this->projectDir, $file->path);

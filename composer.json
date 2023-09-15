@@ -25,8 +25,8 @@
     "require":{
         "ext-json": "*",
         "php": "^7.4 || ^8.0",
-        "contao/core-bundle": "^4.9",
-        "symfony/http-client": "^4.4 || ^5.4"
+        "contao/core-bundle": "^4.13 || ^5.1",
+        "symfony/http-client": "^4.4 || ^5.4 || ^6.0"
     },
     "extra": {
         "contao-manager-plugin": "Plenta\\ContaoTinyCompressImages\\ContaoManager\\Plugin"
