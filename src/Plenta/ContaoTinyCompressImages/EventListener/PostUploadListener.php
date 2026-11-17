@@ -29,6 +29,10 @@ class PostUploadListener
     public function __invoke(array $files): void
     {
         foreach ($files as $file) {
+            if (!\in_array(strtolower(pathinfo((string) $file, PATHINFO_EXTENSION)), Compressor::EXTENSIONS, true)) {
+                continue;
+            }
+
             $this->compressor->compress($file);
         }
     }
